@@ -1,6 +1,4 @@
-This repository is consist of various exercises from Udemy and Coursera python courses
-
-This also consists of various Python projects.
+This repository consists of various Python projects.
 
 The author of the projects solely want to apply all the learnings from the courses taken. 
 
