@@ -1,3 +1,11 @@
+"""
+    Author: Ojelle Rogero
+    Created on: November 14, 2021
+    About:
+        Converts the Weekly Market Recap section of GSAM Market Monitor
+        Parse each asset type and save as a data table in separate sheet
+"""
+
 import os
 import tabula
 import pandas as pd
