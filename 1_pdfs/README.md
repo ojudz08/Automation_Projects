@@ -15,7 +15,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#python-libraries-used">Python Libraries Used</a></li>
       </ul>
     </li>
     <li>
@@ -44,7 +44,7 @@ Merge multiple pdf into one pdf
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-### Python Libraries / Class
+### Python Libraries Used
 
 * [tabula-py](https://pypi.org/project/tabula-py/)
 * [PdfFileMerger](https://pythonhosted.org/PyPDF2/PdfFileMerger.html)
