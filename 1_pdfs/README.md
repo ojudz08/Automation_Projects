@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ojudz08/Projects/tree/main/1_pdfs">
-    <img src="images/logo.jpg" alt="Logo" width="75" height="100">
+    <img src="images/logo.jpg" alt="Logo" width="90" height="100">
   </a>
 
 <h3 align="center">Parsing/Merging PDFs</h3>
