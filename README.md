@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<h2 align="center">Projects</h2>
+<h1 align="center">Projects</h1>
 </div>
 
 <!-- Table of Contents -->
@@ -30,19 +30,23 @@
 
 1. [Parsing/Merging PDFs](https://github.com/ojudz08/Projects/tree/main/1_pdfs)
 
-Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
+   Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
+
 
 2. [APIs](https://github.com/ojudz08/Projects/tree/main/2_APIs)
 
-Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
+   Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
+
 
 3. [Derivatives](https://github.com/ojudz08/Projects/tree/main/3_derivatives)
 
-Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
+   Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
+
 
 4. [Web Scraping](https://github.com/ojudz08/Projects/tree/main/4_web%20scraping)
 
-Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
+   Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -55,7 +59,7 @@ Go through each project repositories' readme to know the prerequisites or the py
 
 
 <!-- CONTACT -->
-## Contact
+### Contact
 
 Ojelle Rogero - ojelle.rogero@gmail.com with email subject "Github Parsing PDFs"
 
