@@ -81,8 +81,8 @@ Install the necessary libraries and/or prerequisites before using the created py
 
 NOTE: If you're familiar with using conda install, please see the links below:
 
-[Installing Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#)
-[conda install](https://docs.conda.io/projects/conda/en/latest/commands/install.html)
+* [Installing Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#)
+* [conda install](https://docs.conda.io/projects/conda/en/latest/commands/install.html)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
