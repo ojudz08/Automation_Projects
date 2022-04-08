@@ -5,7 +5,7 @@
     <img src="images/logo.jpg" alt="Logo" width="90" height="100">
   </a>
 
-<h3 align="center">Parsing/Merging PDFs</h3>
+<h1 align="center">Parsing/Merging PDFs</h1>
 </div>
 
 <!-- TABLE OF CONTENTS -->
