@@ -80,6 +80,7 @@ Install the necessary libraries and/or prerequisites before using the created py
    No need for installation, simply import it within the python script.
 
 NOTE: If you're familiar with using conda install, please see the links below:
+
 [Installing Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#)
 [conda install](https://docs.conda.io/projects/conda/en/latest/commands/install.html)
 
@@ -90,9 +91,7 @@ NOTE: If you're familiar with using conda install, please see the links below:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+Placeholder (will edit this section)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
