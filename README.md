@@ -1,37 +1,31 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/ojudz08/Projects/tree/main/1_pdfs">
-    <img src="images/logo.jpg" alt="Logo" width="90" height="100">
-  </a>
-
-<h3 align="center">Parsing/Merging PDFs</h3>
+<h3 align="center">Projects</h3>
 </div>
 
-<!-- TABLE OF CONTENTS -->
+<!-- Project Lists -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Project Lists</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#python-libraries-used">Python Libraries Used</a></li>
-      </ul>
+      <a href="#parsing-merging-pdfs">Parsing / Merging pdfs</a>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
+      <a href="#apis">APIs</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
-	<li><a href="#limitations">Limitations</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li>
+      <a href="#derivatives">Derivatives</a>
+    </li>
+	  <li>
+      <a href="#web-scraping">Web Scraping</a>
+    </li>
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+
+<!-- PROJECT LISTS -->
+## Project Lists
 
 Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output. 
 
