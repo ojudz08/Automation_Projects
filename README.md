@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<h3 align="center">Projects</h3>
+<h2 align="center">Projects</h2>
 </div>
 
 <!-- Table of Contents -->
@@ -24,19 +24,24 @@
 </details>
 
 
+
 <!-- PROJECT LISTS -->
 ### Project Lists
 
 1. [Parsing/Merging PDFs](https://github.com/ojudz08/Projects/tree/main/1_pdfs)
+
 Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
 
 2. [APIs](https://github.com/ojudz08/Projects/tree/main/2_APIs)
+
 Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
 
 3. [Derivatives](https://github.com/ojudz08/Projects/tree/main/3_derivatives)
+
 Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
 
 4. [Web Scraping](https://github.com/ojudz08/Projects/tree/main/4_web%20scraping)
+
 Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
