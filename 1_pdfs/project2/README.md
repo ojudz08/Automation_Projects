@@ -1,15 +1,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<h2 align="center">Parsing PDFs</h2>
+<h2 align="center">Merging PDFs</h2>
 </div>
 
 
 <!-- ABOUT -->
 ### About
 
-This project converts Goldman Sachs' Weekly Market Recap report - Index Returns, Commodities, Currencies and Rates & Spreads.
-NOTE: The python script created works well for the specified pdf reports. The parsing pdf script may not or probably won't work on all pdf. Please contact the author for any suggestions or recommendations on these projects.
+This a simple project to merge all pdf file into one pdf file.
 
 
 

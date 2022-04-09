@@ -20,7 +20,7 @@ class pdfMerge():
         """
         merger = PdfFileMerger()
         for pdf in os.listdir(self.file):
-            merger.append(os.path.join(self.file, pdf))
+            if pdf[-3:] == 'pdf': merger.append(os.path.join(self.file, pdf))
         merger.write(self.output)
         merger.close()
 

@@ -77,7 +77,9 @@ Install the necessary libraries and/or prerequisites before using the created py
 2. Merging pdf
    PdfFileMerger
    
-   No need for installation, simply import it within the python script.
+   ```sh
+   pip install PyPDF2
+   ```
 
 NOTE: If you're familiar with using conda install, please see the links below:
 
