@@ -150,10 +150,10 @@ class pdfConvert():
 
 
 if __name__ == '__main__':
-    file_path = r'C:\Users\ojell\Desktop\Oj\_Projects\_temp\Projects\1_pdfs\project1\sample pdf'
-    input_file = r'GSAM_market_monitor_081321.pdf'
-    out_path = r'C:\Users\ojell\Desktop\Oj\_Projects\_temp\Projects\1_pdfs\project1\output'
-    output_file = r'GSAM_Weekly_Market_Recap.xlsx'
+    file_path = # path where the pdf file is saved
+    input_file = # pdf file name
+    out_path = # path where to save the xlsx output
+    output_file = # xlsx output file name
 
     convert = pdfConvert(os.path.join(file_path, input_file), os.path.join(out_path, output_file))
     convert.weeklyMarketRecap()
