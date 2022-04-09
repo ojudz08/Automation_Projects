@@ -1,9 +1,12 @@
 """
     Author: Ojelle Rogero
     Created on: November 14, 2021
+    Modified on: April 8, 2022
     About:
         Converts the Weekly Market Recap section of GSAM Market Monitor
         Parse each asset type and save as a data table in separate sheet
+    Modification / Updates:
+        Function definition, input and output parameters are added.
 """
 
 import os
@@ -13,18 +16,34 @@ import pandas as pd
 
 class pdfConvert():
 
-    def __init__(self, directory, file):
-        self.dir = directory
+    def __init__(self, file, output):
         self.file = file
+        self.output = output
 
 
     def readPdf(self, box, pg, strm):
+        """
+          Reads the table section with its designated bounding box. Parsed the table and returns a dataframe.
+            :param box:
+              bounding box - list; boundary box or section of the table to parse
+            :param pg:
+              pdf page - int; the page section of the pdf to parse
+            :param strm:
+              stream mode - True or False; used to parse tables with whitespaces between cells to simulate table like structure
+            :return:
+              returns a dataframe output
+        """
         box_fc = [box[i] * 28.28 for i in range(0, 4)]
-        df = tabula.read_pdf(os.path.join(self.dir, self.file), pages=pg, area=[box_fc], output_format='dataframe', stream=strm)
+        df = tabula.read_pdf(self.file, pages=pg, area=[box_fc], output_format='dataframe', stream=strm)
         return df
 
 
     def indexReturns(self):
+        """
+          Parse the Index Returns table (page 3 of the pdf)
+            :return:
+              returns the parsed table as dataframe
+        """
         df = self.readPdf([2, 0, 20, 11], 3, True)[0]
         marketType = df.columns.values[0]
         prd = df.iloc[0, :]
@@ -49,6 +68,11 @@ class pdfConvert():
 
 
     def commodities(self):
+        """
+          Parse the Commodities table (page 3 of the pdf)
+            :return:
+              return the parsed table as dataframe
+        """
         df = self.readPdf([20, 0, 23, 11], 3, True)[0]
         marketType = df.columns.values[0]
         prd = df.iloc[0, :]
@@ -62,6 +86,11 @@ class pdfConvert():
 
 
     def currencies(self):
+        """
+          Parse the Currencies table (page 3 of the pdf)
+            :return:
+              returns the parsed table as dataframe
+        """
         df = self.readPdf([23, 0, 27, 11], 3, True)[0]
         marketType = df.columns.values[0]
         prd = df.iloc[0, :]
@@ -75,6 +104,11 @@ class pdfConvert():
 
 
     def ratesSpreads(self):
+        """
+          Parse the Rates & Spreads table (page 3 of the pdf)
+            :return:
+              returns the parsed table as dataframe
+        """
         df = self.readPdf([2, 11, 13, 22], 3, True)[0]
         marketType = df.columns.values[0]
         prd = df.iloc[0, :]
@@ -100,12 +134,15 @@ class pdfConvert():
 
 
     def weeklyMarketRecap(self):
+        """
+          Saves output as an xlsx
+        """
         idxRet = self.indexReturns()
         comm = self.commodities()
         curr = self.currencies()
         rtSp = self.ratesSpreads()
 
-        with pd.ExcelWriter('GSAM_Weekly_Market_Recap.xlsx') as writer:
+        with pd.ExcelWriter(self.output) as writer:
             idxRet.to_excel(writer, sheet_name="index_returns", index=False)
             comm.to_excel(writer, sheet_name="commodities", index=False)
             curr.to_excel(writer, sheet_name="currencies", index=False)
@@ -113,8 +150,11 @@ class pdfConvert():
 
 
 if __name__ == '__main__':
-    directory = # directory of your file
-    file = r'GSAM_market_monitor_081321.pdf'
+    file_path = r'C:\Users\ojell\Desktop\Oj\_Projects\_temp\Projects\1_pdfs\project1\sample pdf'
+    input_file = r'GSAM_market_monitor_081321.pdf'
+    out_path = r'C:\Users\ojell\Desktop\Oj\_Projects\_temp\Projects\1_pdfs\project1\output'
+    output_file = r'GSAM_Weekly_Market_Recap.xlsx'
 
-    convert = pdfConvert(directory, file)
+    convert = pdfConvert(os.path.join(file_path, input_file), os.path.join(out_path, output_file))
     convert.weeklyMarketRecap()
+    print(f'Done converting {input_file}')
