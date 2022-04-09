@@ -8,13 +8,7 @@
 <!-- ABOUT -->
 ### About
 
-Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output. 
-
-Project 1: Parsing pdf
-Parse Weekly Market Recap section of GSAM Market Monitor and save output as xlsx into separate sheet.
-
-Project 2: Merging pdf
-Merge multiple pdf into one pdf
+This project converts Goldman Sachs' Weekly Market Recap report - Index Returns, Commodities, Currencies and Rates & Spreads.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -24,7 +18,6 @@ Merge multiple pdf into one pdf
 ### Python Libraries Used
 
 * [tabula-py](https://pypi.org/project/tabula-py/)
-* [PdfFileMerger](https://pythonhosted.org/PyPDF2/PdfFileMerger.html)
 * [pandas](https://pandas.pydata.org/docs/user_guide/index.html)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
