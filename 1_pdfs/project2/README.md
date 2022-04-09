@@ -17,14 +17,7 @@ This a simple project to merge all pdf file into one pdf file.
 
 Install the necessary libraries and/or prerequisites before using the created python script.
 
-* [tabula-py](https://pypi.org/project/tabula-py/)
+* [PdfFileMerger](https://pythonhosted.org/PyPDF2/PdfFileMerger.html)
   ```sh
-   pip install tabula-py
+   pip install PyPDF2
   ```
-
-
-* [pandas](https://pandas.pydata.org/docs/user_guide/index.html)
-
-   ```sh
-   pip install pandas
-   ```
