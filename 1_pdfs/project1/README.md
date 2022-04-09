@@ -75,6 +75,6 @@ The python script created works well for the specified pdf reports. The parsing 
 <!-- CONTACT -->
 ## Contact
 
-Ojelle Rogero - ojelle.rogero@gmail.com with email subject "Github Parsing PDFs"
+Ojelle Rogero - ojelle.rogero@gmail.com with email subject "Github Project Parsing PDFs"
 
 <p align="right">(<a href="#top">back to top</a>)</p>
