@@ -1,12 +1,12 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<h3 align="center">Parsing PDFs</h3>
+<h2 align="center">Parsing PDFs</h2>
 </div>
 
 
 <!-- ABOUT -->
-## About
+### About
 
 Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output. 
 
@@ -19,6 +19,8 @@ Merge multiple pdf into one pdf
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+
+<!-- PYTHON LIBRARIES USED -->
 ### Python Libraries Used
 
 * [tabula-py](https://pypi.org/project/tabula-py/)
@@ -29,12 +31,10 @@ Merge multiple pdf into one pdf
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
+<!-- INSTALLATION -->
+### Installation
 
 Install the necessary libraries and/or prerequisites before using the created python script.
-
-### Installation
 
 1. Parsing pdf
    tabula-py
@@ -58,15 +58,6 @@ NOTE: If you're familiar with using conda install, please see the links below:
 
 * [Installing Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#)
 * [conda install](https://docs.conda.io/projects/conda/en/latest/commands/install.html)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Placeholder (will edit this section)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
