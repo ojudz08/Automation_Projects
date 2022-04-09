@@ -2,18 +2,34 @@
     Author: Ojelle Rogero
     Created on: November 23, 2021
     About:
-        Merge pdf files into one file
+        Simple python script to merge pdf files into one pdf file
 """
 
 from PyPDF2 import PdfFileMerger
 import os
 
-directory = # file path of pdfs
+class pdfMerge():
 
-merger = PdfFileMerger()
+    def __init__(self, file, output):
+        self.file = file
+        self.output = output
 
-for file in os.listdir(directory):
-    merger.append(os.path.join(directory, file))
+    def merge(self):
+        """
+          Combines all pdf and save
+        """
+        merger = PdfFileMerger()
+        for pdf in os.listdir(self.file):
+            merger.append(os.path.join(self.file, pdf))
+        merger.write(self.output)
+        merger.close()
 
-merger.write("output_filename.pdf")
-merger.close()
+
+if __name__ == '__main__':
+    file_path =  # path where the pdf file is saved
+    out_path =  # path where to save the combined pdfs
+    output_file =  # combined pdf output file name
+
+    mergepdf = pdfMerge(file_path, os.path.join(out_path, output_file))
+    mergepdf.merge()
+    print('Done merging all pdfs!')
