@@ -36,12 +36,15 @@
 Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output. 
 
 Project 1: Parsing GSAM Market Monitor pdf
+
 Parse Weekly Market Recap section of GSAM Market Monitor and save output as xlsx into separate sheet.
 
 Project 2: Merge pdf reports
+
 Merge multiple pdf into one pdf
 
 Project 3: Parse sample Stock Level pdf
+
 Merge multiple pdf into one pdf
 
 <p align="right">(<a href="#top">back to top</a>)</p>
