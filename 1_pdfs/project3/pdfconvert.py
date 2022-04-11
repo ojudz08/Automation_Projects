@@ -19,11 +19,27 @@ class pdfConvert():
         self.totpg = PyPDF2.PdfFileReader(open(self.filename, 'rb')).numPages
 
     def readPdf(self, box, pg, strm):
+        """
+          Reads the table section with its designated bounding box. Parsed the table and returns a dataframe.
+            :param box:
+              bounding box - list; boundary box or section of the table to parse
+            :param pg:
+              pdf page - int; the page section of the pdf to parse
+            :param strm:
+              stream mode - True or False; used to parse tables with whitespaces between cells to simulate table like structure
+            :return:
+              returns a dataframe output
+        """
         box_fc = [box[i] * 28.28 for i in range(0, 4)]
         df = tabula.read_pdf(self.filename, pages=pg, area=[box_fc], output_format='dataframe', stream=strm)
         return df
 
     def parsePgAll(self):
+        """
+          Parse all the tables within the sample stock level pdf
+            :return:
+              returns the combined parsed table as dataframe
+        """
         box = [[1, 0, 20, 2.8],
                [1, 2.8, 20, 6.6],
                [1, 6.6, 20, 14.8],
@@ -42,6 +58,9 @@ class pdfConvert():
         return data
 
     def save(self):
+        """
+          Saves output as an xlsx
+        """
         pgAll = self.parsePgAll()
 
         with pd.ExcelWriter(self.output) as writer:
