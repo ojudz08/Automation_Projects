@@ -1,12 +1,8 @@
 """
     Author: Ojelle Rogero
-    Created on: November 14, 2021
-    Modified on: April 8, 2022
+    Created on: April 11, 2022
     About:
-        Converts the Weekly Market Recap section of GSAM Market Monitor
-        Parse each asset type and save as a data table in separate sheet
-    Modification / Updates:
-        Function definition, input and output parameters are added.
+        Converts the sample pdf stock level report and parse all tables
 """
 
 import os
@@ -20,9 +16,7 @@ class pdfConvert():
     def __init__(self, filename, output):
         self.filename = filename
         self.output = output
-        file = open(self.filename, 'rb')
-        readpdf = PyPDF2.PdfFileReader(file)
-        self.totpg = readpdf.numPages
+        self.totpg = PyPDF2.PdfFileReader(open(self.filename, 'rb')).numPages
 
     def readPdf(self, box, pg, strm):
         box_fc = [box[i] * 28.28 for i in range(0, 4)]
