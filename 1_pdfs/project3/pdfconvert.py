@@ -49,8 +49,8 @@ class pdfConvert():
 
 
 if __name__ == '__main__':
-    file_path = r'C:\Users\ojell\Desktop\Oj\_Projects\_temp\Projects\1_pdfs\project3\pdf' # path where the pdf file is saved
-    out_path = r'C:\Users\ojell\Desktop\Oj\_Projects\_temp\Projects\1_pdfs\project3\csv' # path where to save the xlsx output
+    file_path = # path where the pdf file is saved
+    out_path = # path where to save the xlsx output
 
     for file in os.listdir(file_path):
         convert = pdfConvert(os.path.join(file_path, file), os.path.join(out_path, file[:-4] + '.xlsx'))
