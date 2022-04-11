@@ -37,15 +37,15 @@ Multiple projects converting pdf or parsing table from a specific sections or ta
 
 Project 1: Parsing GSAM Market Monitor pdf
 
-Parse Weekly Market Recap section of GSAM Market Monitor and save output as xlsx into separate sheet.
+  Parse Weekly Market Recap section of GSAM Market Monitor and save output as xlsx into separate sheet.
 
 Project 2: Merge pdf reports
 
-Merge multiple pdf into one pdf
+  Merge multiple pdf into one pdf
 
 Project 3: Parse sample Stock Level pdf
 
-Merge multiple pdf into one pdf
+  Merge multiple pdf into one pdf
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -69,29 +69,29 @@ Install the necessary libraries and/or prerequisites before using the created py
 
 1. Project1: Parsing GSAM Market Monitor pdf
 
-  tabula-py
+      tabula-py
    
-   ```sh
-   pip install tabula-py
-   ```
+      ```sh
+      pip install tabula-py
+      ```
    
-   pandas
+      pandas
    
-   ```sh
-   pip install pandas
-   ```
+      ```sh
+      pip install pandas
+      ```
 
 2. Project2: Merge pdf reports
    
-   PdfFileMerger
+      PdfFileMerger
    
-   ```sh
-   pip install PyPDF2
-   ```
+      ```sh
+      pip install PyPDF2
+      ```
 
 3. Project3: Parse sample Stock Level pdf
    
-   Install tabula-py, PyPDF2 and pandas
+      Install tabula-py, PyPDF2 and pandas
    
 
 NOTE: If you're familiar with using conda install, please see the links below:
