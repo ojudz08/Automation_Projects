@@ -73,5 +73,5 @@ if __name__ == '__main__':
 
     for file in os.listdir(file_path):
         convert = pdfConvert(os.path.join(file_path, file), os.path.join(out_path, file[:-4] + '.xlsx'))
-        test = convert.save()
+        convert.save()
     print('Done!')
