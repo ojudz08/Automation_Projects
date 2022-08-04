@@ -35,17 +35,17 @@
 
 2. [APIs](https://github.com/ojudz08/Projects/tree/main/2_APIs)
 
-   Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
+   TO EDIT.
 
 
 3. [Derivatives](https://github.com/ojudz08/Projects/tree/main/3_derivatives)
 
-   Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
+   TO EDIT.
 
 
 4. [Web Scraping](https://github.com/ojudz08/Projects/tree/main/4_web%20scraping)
 
-   Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
+   TO EDIT.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
