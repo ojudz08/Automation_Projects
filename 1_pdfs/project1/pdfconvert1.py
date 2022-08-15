@@ -1,12 +1,13 @@
 """
     Author: Ojelle Rogero
     Created on: November 14, 2021
-    Modified on: April 8, 2022
+    Modified on: August 15, 2022
     About:
         Converts the Weekly Market Recap section of GSAM Market Monitor
         Parse each asset type and save as a data table in separate sheet
     Modification / Updates:
         Function definition, input and output parameters are added.
+        8/15/22 Updated each function doc string
 """
 
 import os
@@ -24,14 +25,15 @@ class pdfConvert():
     def readPdf(self, box, pg, strm):
         """
           Reads the table section with its designated bounding box. Parsed the table and returns a dataframe.
-            :param box:
-              bounding box - list; boundary box or section of the table to parse
-            :param pg:
-              pdf page - int; the page section of the pdf to parse
-            :param strm:
-              stream mode - True or False; used to parse tables with whitespaces between cells to simulate table like structure
-            :return:
-              returns a dataframe output
+            :input
+              box
+                bounding box - list; boundary box or section of the table to parse
+              pg
+                pdf page - int; the page section of the pdf to parse
+              strm
+                stream mode - True or False; used to parse tables with whitespaces between cells to simulate table like structure
+            :output
+              df - parsed and converted content from pdf output as dataframe
         """
         box_fc = [box[i] * 28.28 for i in range(0, 4)]
         df = tabula.read_pdf(self.file, pages=pg, area=[box_fc], output_format='dataframe', stream=strm)
@@ -41,8 +43,10 @@ class pdfConvert():
     def indexReturns(self):
         """
           Parse the Index Returns table (page 3 of the pdf)
-            :return:
-              returns the parsed table as dataframe
+            :input
+              None. Input df is called from readPdf function
+            :output
+              data - index Returns manipulated table output as dataframe
         """
         df = self.readPdf([2, 0, 20, 11], 3, True)[0]
         marketType = df.columns.values[0]
@@ -70,8 +74,10 @@ class pdfConvert():
     def commodities(self):
         """
           Parse the Commodities table (page 3 of the pdf)
-            :return:
-              return the parsed table as dataframe
+            :input
+              None. Input df is called from readPdf function
+            :output
+              data - commodities manipulated table output as dataframe
         """
         df = self.readPdf([20, 0, 23, 11], 3, True)[0]
         marketType = df.columns.values[0]
@@ -88,8 +94,10 @@ class pdfConvert():
     def currencies(self):
         """
           Parse the Currencies table (page 3 of the pdf)
-            :return:
-              returns the parsed table as dataframe
+            :input
+              None. Input df is called from readPdf function
+            :output
+              data - currencies manipulated table output as dataframe
         """
         df = self.readPdf([23, 0, 27, 11], 3, True)[0]
         marketType = df.columns.values[0]
@@ -106,8 +114,10 @@ class pdfConvert():
     def ratesSpreads(self):
         """
           Parse the Rates & Spreads table (page 3 of the pdf)
-            :return:
-              returns the parsed table as dataframe
+            :input
+              None. Input df is called from readPdf function
+            :output
+              data - rates or spreads manipulated table output as dataframe
         """
         df = self.readPdf([2, 11, 13, 22], 3, True)[0]
         marketType = df.columns.values[0]
@@ -136,6 +146,10 @@ class pdfConvert():
     def weeklyMarketRecap(self):
         """
           Saves output as an xlsx
+            :input
+              None. Inputs are from the multiple asset classs function
+            :output
+              outputs an xls file
         """
         idxRet = self.indexReturns()
         comm = self.commodities()
