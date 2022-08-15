@@ -7,7 +7,6 @@
         Parse each asset type and save as a data table in separate sheet
     Modification / Updates:
         Function definition, input and output parameters are added.
-        8/15/22 Updated each function doc string
 """
 
 import os
