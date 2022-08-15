@@ -17,6 +17,9 @@ import pandas as pd
 class pdfConvert():
 
     def __init__(self, file, output):
+        """
+          Initialization params
+        """
         self.file = file
         self.output = output
 
