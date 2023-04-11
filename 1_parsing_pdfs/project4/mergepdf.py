@@ -5,14 +5,14 @@
         Simple python script to merge pdf files into one pdf file
 """
 
-from PyPDF2 import PdfFileMerger
+from PyPDF2 import PdfMerger
 import os
 
 class pdfMerge():
 
     def __init__(self, file, output):
         self.file = file
-        self.output = output
+        self.output = outputPdfMerger
 
     def merge(self):
         """
