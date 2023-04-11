@@ -5,7 +5,7 @@
         Simple python script to merge pdf files into one pdf file
 """
 
-from PyPDF2 import PdfFileMerger
+from PyPDF2 import PdfMerger
 import os
 
 class pdfMerge():
@@ -18,7 +18,7 @@ class pdfMerge():
         """
           Combines all pdf and save
         """
-        merger = PdfFileMerger()
+        merger = PdfMerger()
         for pdf in os.listdir(self.file):
             if pdf[-3:] == 'pdf': merger.append(os.path.join(self.file, pdf))
         merger.write(self.output)
