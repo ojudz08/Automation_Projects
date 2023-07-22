@@ -1,12 +1,14 @@
 """
     Author: Ojelle Rogero
     Created on: November 23, 2021
+    Modified on: July 22, 2023
     About:
         Simple python script to merge pdf files into one pdf file
 """
 
+from pathlib import Path
 from PyPDF2 import PdfMerger
-import os
+import os, sys
 
 class pdfMerge():
 
@@ -26,9 +28,12 @@ class pdfMerge():
 
 
 if __name__ == '__main__':
-    file_path =  # path where the pdf file is saved
-    out_path =  # path where to save the combined pdfs
-    output_file =  # combined pdf output file name
+    parent_dir = Path(__file__).parents[1]
+    sys.path.append(parent_dir)
+
+    file_path =  str(parent_dir) + r"\mergePDFs\reports"
+    out_path =  str(parent_dir) + r"\mergePDFs\output"
+    output_file =  "Nasdaq_Commodities_Summary.pdf"
 
     mergepdf = pdfMerge(file_path, os.path.join(out_path, output_file))
     mergepdf.merge()
