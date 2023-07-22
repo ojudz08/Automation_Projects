@@ -8,18 +8,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="https://github.com/ojudz08/Projects/tree/main/1_pdfs">Parsing / Merging pdfs</a>
-    </li>
-    <li>
-      <a href="https://github.com/ojudz08/Projects/tree/main/2_APIs">APIs</a>
-    </li>
-    <li>
-      <a href="#derivatives">Derivatives</a>
-    </li>
-	  <li>
-      <a href="#web-scraping">Web Scraping</a>
-    </li>
+    To EDIT
   </ol>
 </details>
 
@@ -28,24 +17,7 @@
 <!-- PROJECT LISTS -->
 ### Project Lists
 
-1. [Parsing/Merging PDFs](https://github.com/ojudz08/Projects/tree/main/1_pdfs)
-
-   Multiple projects converting pdf or parsing table from a specific sections or tables. Then convert it into an excel output.
-
-
-2. [APIs](https://github.com/ojudz08/Projects/tree/main/2_APIs)
-
-   TO EDIT.
-
-
-3. [Derivatives](https://github.com/ojudz08/Projects/tree/main/3_derivatives)
-
-   TO EDIT.
-
-
-4. [Web Scraping](https://github.com/ojudz08/Projects/tree/main/4_web%20scraping)
-
-   TO EDIT.
+TO EDIT
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
