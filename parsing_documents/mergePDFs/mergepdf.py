@@ -14,7 +14,7 @@ class pdfMerge():
 
     def __init__(self, file, output):
         self.file = file
-        self.output = output
+        self.output = outputPdfMerger
 
     def merge(self):
         """
