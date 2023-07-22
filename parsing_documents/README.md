@@ -42,9 +42,13 @@ Install the necessary libraries and/or prerequisites before using the python scr
   ```sh
    pip install tabula-py
   ```
-* [PdfFileMerger](https://pypi.org/project/pypdf/)
+* [pypdf](https://pypi.org/project/pypdf/)
   ```sh
    pip install pypdf
+  ```
+  For using pypdf with AES encryption or decryption, install extra dependencies:
+  ```sh
+   pip install pypdf[crypto]
   ```
 * [PyCryptodome](https://pypi.org/project/pycryptodome/)
   ```sh
