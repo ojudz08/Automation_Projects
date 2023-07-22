@@ -1,7 +1,7 @@
 """
     Author: Ojelle Rogero
     Created on: November 14, 2021
-    Modified on: August 15, 2022
+    Modified on: July 22, 2023
     About:
         Converts the Weekly Market Recap section of GSAM Market Monitor
         Parse each asset type and save as a data table in separate sheet
@@ -9,7 +9,8 @@
         Function definition, input and output parameters are added.
 """
 
-import os
+from pathlib import Path
+import os, sys
 import tabula
 import pandas as pd
 
@@ -17,9 +18,6 @@ import pandas as pd
 class pdfConvert():
 
     def __init__(self, file, output):
-        """
-          Initialization params
-        """
         self.file = file
         self.output = output
 
@@ -166,10 +164,13 @@ class pdfConvert():
 
 
 if __name__ == '__main__':
-    file_path = # path where the pdf file is saved
-    input_file = # pdf file name
-    out_path = # path where to save the xlsx output
-    output_file = # xlsx output file name
+    parent_dir = Path(__file__).parents[1]
+    sys.path.append(parent_dir)
+    
+    file_path = str(parent_dir) + r"\parsePDFs_01\reports"
+    input_file = r"GSAM_market_monitor_081321.pdf"
+    out_path = str(parent_dir) + r"\parsePDFs_01\output"
+    output_file = r"GSAM_Weekly_Market_Recap.xlsx"
 
     convert = pdfConvert(os.path.join(file_path, input_file), os.path.join(out_path, output_file))
     convert.weeklyMarketRecap()
