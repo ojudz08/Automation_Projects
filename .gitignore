@@ -9,8 +9,3 @@ config.*
 /api(draft)
 /finance(draft)
 /web_scraping
-
-# ignore changes in subfolders
-/parsing_documents/parsePDFs01
-/parsing_documents/parsePDFs02
-/parsing_documents/parsePDFs03
