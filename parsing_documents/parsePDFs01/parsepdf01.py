@@ -167,11 +167,11 @@ if __name__ == '__main__':
     parent_dir = Path(__file__).parents[1]
     sys.path.append(parent_dir)
     
-    file_path = str(parent_dir) + r"\parsePDFs_01\reports"
+    file_path = str(parent_dir) + r"\parsePDFs01\reports"
     input_file = r"GSAM_market_monitor_081321.pdf"
-    out_path = str(parent_dir) + r"\parsePDFs_01\output"
+    out_path = str(parent_dir) + r"\parsePDFs01\output"
     output_file = r"GSAM_Weekly_Market_Recap.xlsx"
 
     convert = pdfConvert(os.path.join(file_path, input_file), os.path.join(out_path, output_file))
     convert.weeklyMarketRecap()
-    print(f'Done converting {input_file}')
+    print(f'Done converting pdf!')

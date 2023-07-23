@@ -5,7 +5,8 @@
         Converts the sample pdf stock level report and parse all tables
 """
 
-import os
+from pathlib import Path
+import os, sys
 import tabula
 import pandas as pd
 import PyPDF2
@@ -16,7 +17,7 @@ class pdfConvert():
     def __init__(self, filename, output):
         self.filename = filename
         self.output = output
-        self.totpg = PyPDF2.PdfFileReader(open(self.filename, 'rb')).numPages
+        self.totpg = len(PyPDF2.PdfReader(open(self.filename, 'rb')).pages)
 
     def readPdf(self, box, pg, strm):
         """
@@ -68,8 +69,11 @@ class pdfConvert():
 
 
 if __name__ == '__main__':
-    file_path = # path where the pdf file is saved
-    out_path = # path where to save the xlsx output
+    parent_dir = Path(__file__).parents[1]
+    sys.path.append(parent_dir)
+    
+    file_path = str(parent_dir) + r"\parsePDFs01\reports"
+    out_path = str(parent_dir) + r"\parsePDFs01\output"
 
     for file in os.listdir(file_path):
         convert = pdfConvert(os.path.join(file_path, file), os.path.join(out_path, file[:-4] + '.xlsx'))
