@@ -6,11 +6,17 @@ config.*
 .venv
 .idea
 /_archive
-/api(draft)
 /finance(draft)
 /web_scraping
 
-# ignore changes in subfolders
+# ignore changes in subfolders - api
+/api/mlbb
+/api/project1
+/api/spotify_api
+/api/README.md
+/api/stock_price.py
+
+# ignore changes in subfolders - parsing_documents
 /parsing_documents/parsePDFs01/output
 /parsing_documents/parsePDFs01/reports
 

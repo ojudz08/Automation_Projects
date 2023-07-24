@@ -24,7 +24,7 @@ sys.path.append(parent_dir)
 
 pdf_folder =  str(parent_dir) + r"\parsePDFs01\reports"
 output_folder =  str(parent_dir) + r"\parsePDFs01\output"
-pdf_filename = r"GSAM_market_monitor_081321.pdf"
+pdf_filename = r"GSAM_Market_Monitor_081222.pdf"
 output_filename = r"GSAM_Weekly_Market_Recap.xlsx"
 
     
@@ -35,7 +35,8 @@ third_page = read_pdf.pages[2]
 extracted = third_page.extract_text()
 
 
-to_parse = {'Index Returns': ['Equities', 'Fixed Income', 'Other']}
+idx_ret = ['Equities', 'Fixed Income', 'Other']
+idx_ret_lower = [item.lower() for item in idx_ret]
 
 to_save_in = os.path.join(output_folder, 'test.txt')
 with open(to_save_in, 'w') as f:
@@ -53,3 +54,5 @@ for row in df.iloc[:, 0]:
     except:
         print(f"{newstr} - Not a float")
         # append to first column -- Equities, Fixed Income, Other
+
+

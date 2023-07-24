@@ -168,10 +168,19 @@ if __name__ == '__main__':
     sys.path.append(parent_dir)
     
     file_path = str(parent_dir) + r"\parsePDFs01\reports"
-    input_file = r"GSAM_market_monitor_081321.pdf"
+    input_file = r"GSAM_Market_Monitor_081222.pdf"
     out_path = str(parent_dir) + r"\parsePDFs01\output"
     output_file = r"GSAM_Weekly_Market_Recap.xlsx"
 
     convert = pdfConvert(os.path.join(file_path, input_file), os.path.join(out_path, output_file))
-    convert.weeklyMarketRecap()
-    print(f'Done converting pdf!')
+    #convert.weeklyMarketRecap()
+    #print(f'Done converting pdf!')
+
+    #df = self.readPdf([2, 0, 20, 11], 3, True)[0]
+    #box_fc = [box[i] * 28.28 for i in range(0, 4)]
+    #df = tabula.read_pdf(self.file, pages=pg, area=[box_fc], output_format='dataframe', stream=strm)
+
+    box = [2, 0, 20, 11]
+    box_fc = [box[i] * 28.28 for i in range(0, 4)]
+    test = tabula.read_pdf(os.path.join(file_path, input_file), pages=3, area=[box_fc], output_format='dataframe', stream=True)
+    print(test)
