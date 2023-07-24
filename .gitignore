@@ -10,7 +10,6 @@ config.*
 /web_scraping
 
 # ignore changes in subfolders - api
-/api/mlbb
 /api/project1
 /api/spotify_api
 /api/README.md
