@@ -62,5 +62,4 @@ df = pd.DataFrame(zipped, columns=['Match ID',
                                    'Offered Live',
                                    'Url'])
 df.to_csv('MLBB_data.csv', index=False)
-
-
+print(df)
