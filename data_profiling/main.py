@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 import pandas as pd
 import numpy as np
-
+from datetime import datetime as dt
 
 
 class dataProfiler():
@@ -14,10 +14,13 @@ class dataProfiler():
 
     def readSourceFile(self):
         """Read source data with csv file type within the source data folder"""
-        folder = os.listdir(self.src_folder)
-        for i in range(0, 1):
-            data_df = pd.read_csv(os.path.join(self.src_folder, folder[i]))
-        return data_df
+        file = os.listdir(self.src_folder)
+        result = pd.DataFrame()
+        for i in range(0, len(file)):
+            if file[0][-3:] == 'csv': 
+                data_df = pd.read_csv(os.path.join(self.src_folder, file[i]))
+                result = pd.concat([result, data_df], axis=0)
+        return result
     
 
     def dataShape(self):
@@ -45,6 +48,7 @@ class dataProfiler():
         dt_cols = []
         for col in temp_df.columns:
             try:
+                # GET BACK HERE --> unconverted data remains when parsing with format "%m/%d/%Y %H:%M": ":32", at position 500
                 np.issubdtype(pd.to_datetime(temp_df[col], format='mixed').dtype, np.datetime64) == True
                 dt_cols.append(col)
             except:
@@ -128,5 +132,5 @@ if __name__ == "__main__":
     output_folder = "output"
     output_filename = "test.xlsx"
 
-    data = dataProfiler(src_folder, output_folder, output_filename).saveResultToExcel()
+    data = dataProfiler(src_folder, output_folder, output_filename).columnDataType()
     print(data)
