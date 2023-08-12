@@ -40,22 +40,34 @@ class dataProfiler():
         return source_stat
 
 
+    def columnProfile(self):
+        column_dataType = self.columnDataType()
+        column_nullDistint = self.columnNullDistinct()
+        result = pd.merge(column_dataType, column_nullDistint)
+        return result
+
+
     def columnDataType(self):
         """Returns the -- Null Count, Distinct Count, Null Count Pct and Distinct Count Pct"""
         source_data = self.readSourceFile().convert_dtypes(infer_objects=True)
         temp_df = source_data[source_data.select_dtypes(include=['string']).columns]
         
-        dt_cols = []
+        dt_cols = []      
         for col in temp_df.columns:
             try:
-                # GET BACK HERE --> unconverted data remains when parsing with format "%m/%d/%Y %H:%M": ":32", at position 500
-                np.issubdtype(pd.to_datetime(temp_df[col], format='ISO8601').dtype, np.datetime64) == True
+                pd.api.types.is_datetime64_dtype(pd.to_datetime(source_data[col], format='mixed')) == True
+                source_data[col] = source_data[col].apply(pd.to_datetime)
                 dt_cols.append(col)
             except:
                 pass
-  
-        source_data[dt_cols] = source_data[dt_cols].astype('datetime64[ns]')
+    
         result = pd.DataFrame(source_data.dtypes).reset_index().rename(columns={'index': 'Column Names', 0: 'Column Data Type'})
+        
+        measurer = np.vectorize(len)
+        minLen_df = pd.DataFrame(np.squeeze(measurer(source_data.values.astype(str)).min(axis=0)).tolist()).rename(columns={0: 'Min Length'})
+        maxLen_df = pd.DataFrame(np.squeeze(measurer(source_data.values.astype(str)).max(axis=0)).tolist()).rename(columns={0: 'Max Length'})
+        result = pd.concat([result, minLen_df, maxLen_df], axis=1)
+        
         return result
 
 
@@ -111,26 +123,26 @@ class dataProfiler():
 
     def saveResultToExcel(self):
         data_shape = self.dataShape()
-        column_dataType = self.columnDataType()
+        column_profile = self.columnProfile()
         data_statistics = self.summaryStatistics()
-        column_NullDistinct = self.columnNullDistinct()
-        column_DistinctValues = self.distinctColumnValues()
+        column_distinct = self.distinctColumnValues()
+        
 
         print("Running data profiler script...")
         
         with pd.ExcelWriter(self.output_result) as writer:
             data_shape.to_excel(writer, sheet_name="data_shape", index=False)
-            column_dataType.to_excel(writer, sheet_name="column_dataType", index=False)
+            column_profile.to_excel(writer, sheet_name="column_profile", index=False)
             data_statistics.to_excel(writer, sheet_name="data_statistics", index=True)
-            column_NullDistinct.to_excel(writer, sheet_name="column_NullDistinct", index=False)
-            column_DistinctValues.to_excel(writer, sheet_name="column_DistinctValues", index=False)
+            column_distinct.to_excel(writer, sheet_name="column_distinct", index=False)
+        
+        print("Done data profiling! ")
 
 
 
 if __name__ == "__main__":
     src_folder = "src_data"
     output_folder = "output"
-    output_filename = "test.xlsx"
+    output_filename = "data_profile_output.xlsx"
 
-    data = dataProfiler(src_folder, output_folder, output_filename).saveResultToExcel()
-    print("Done data profiling! ")
+    data = dataProfiler(src_folder, output_folder, output_filename).saveResultToExcel()    
