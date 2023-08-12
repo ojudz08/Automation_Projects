@@ -41,6 +41,7 @@ class dataProfiler():
 
 
     def columnProfile(self):
+        """Returns the combined column data type and column null/distinct"""
         column_dataType = self.columnDataType()
         column_nullDistint = self.columnNullDistinct()
         result = pd.merge(column_dataType, column_nullDistint)
@@ -122,6 +123,7 @@ class dataProfiler():
     
 
     def saveResultToExcel(self):
+        """Saves the data shape, column profile, data statistics and distinct values of each columns in separate tab. Output is an xlsx"""
         data_shape = self.dataShape()
         column_profile = self.columnProfile()
         data_statistics = self.summaryStatistics()
