@@ -49,11 +49,11 @@ class dataProfiler():
         for col in temp_df.columns:
             try:
                 # GET BACK HERE --> unconverted data remains when parsing with format "%m/%d/%Y %H:%M": ":32", at position 500
-                np.issubdtype(pd.to_datetime(temp_df[col], format='mixed').dtype, np.datetime64) == True
+                np.issubdtype(pd.to_datetime(temp_df[col], format='ISO8601').dtype, np.datetime64) == True
                 dt_cols.append(col)
             except:
                 pass
-
+  
         source_data[dt_cols] = source_data[dt_cols].astype('datetime64[ns]')
         result = pd.DataFrame(source_data.dtypes).reset_index().rename(columns={'index': 'Column Names', 0: 'Column Data Type'})
         return result
@@ -132,5 +132,5 @@ if __name__ == "__main__":
     output_folder = "output"
     output_filename = "test.xlsx"
 
-    data = dataProfiler(src_folder, output_folder, output_filename).columnDataType()
-    print(data)
+    data = dataProfiler(src_folder, output_folder, output_filename).saveResultToExcel()
+    print("Done data profiling! ")
