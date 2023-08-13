@@ -4,15 +4,6 @@
 <h1 align="center">Data Profiler</h1>
 </div>
 
-<!-- Table of Contents -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    
-  </ol>
-</details>
-
-
 
 <!-- ABOUT PROJECT -->
 ### About Project
