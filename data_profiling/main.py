@@ -9,11 +9,21 @@ class dataProfiler():
 
     def __init__(self, source_folder, output_folder, output_filename):
         self.src_folder = os.path.join(Path(__file__).parents[0], source_folder)
+        self.output_folder = os.path.join(Path(__file__).parents[0], output_folder)
         self.output_result = os.path.join(Path(__file__).parents[0], output_folder, output_filename)
+
+
+    def checkFolderExist(self):
+        """"Checks whether your folder exist. If not, create that folder"""
+        if not os.path.exists(self.src_folder):
+            os.makedirs(self.src_folder)
+        if not os.path.exists(self.output_folder):
+            os.makedirs(self.output_folder)
 
 
     def readSourceFile(self):
         """Read source data with csv file type within the source data folder"""
+        check_folder_exist = self.checkFolderExist()
         file = os.listdir(self.src_folder)
         result = pd.DataFrame()
         for i in range(0, len(file)):
@@ -147,4 +157,6 @@ if __name__ == "__main__":
     output_folder = "output"
     output_filename = "data_profile_output.xlsx"
 
-    data = dataProfiler(src_folder, output_folder, output_filename).saveResultToExcel()    
+    data = dataProfiler(src_folder, output_folder, output_filename)
+    save_data = data.saveResultToExcel()
+    
