@@ -55,7 +55,8 @@ if __name__ == "__main__":
     output_folder = # folder name where you want to save your output
     output_filename = "data_profile_output.xlsx" # you can name whatever your output file name is
 
-    data = dataProfiler(src_folder, output_folder, output_filename).saveResultToExcel()   
+    data = dataProfiler(src_folder, output_folder, output_filename)
+    save_data = data.saveResultToExcel()   
 
 ```
 <p align="right">(<a href="#top">back to top</a>)</p>
