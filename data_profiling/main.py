@@ -155,7 +155,7 @@ class dataProfiler():
 if __name__ == "__main__":
     src_folder = "src_data"
     output_folder = "output"
-    output_filename = "data_profile_output.xlsx"
+    output_filename = "result.xlsx"
 
     data = dataProfiler(src_folder, output_folder, output_filename)
     save_data = data.saveResultToExcel()
