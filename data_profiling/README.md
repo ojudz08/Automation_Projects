@@ -22,7 +22,7 @@ Output Result is save a xlsx file type.
 
 4. Column Distinct Values
 
-![Here's how to run the script](https://github.com/ojudz08/AutomationProjects/blob/main/data_profiling/img/data_profiler_v0.mp4?raw=true)
+![Here's how to run the script](img/data_profiler_v0.mp4)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
