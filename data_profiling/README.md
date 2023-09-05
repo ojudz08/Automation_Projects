@@ -1,4 +1,4 @@
-<p align="right"><a href="https://github.com/ojudz08/AutomationProjects/tree/main/data_profiling">Back To Main Page</a></p>
+<p align="right"><a href="https://github.com/ojudz08/AutomationProjects/tree/main">Back To Main Page</a></p>
 
 
 <!-- PROJECT LOGO -->
