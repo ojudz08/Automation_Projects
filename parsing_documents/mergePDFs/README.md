@@ -26,6 +26,9 @@ python -m pip install -r requirements.txt
 ```
 
 
+https://github.com/ojudz08/AutomationProjects/assets/26113813/6a024d59-ba34-46e5-9c6f-4d43b2d7a704
+
+
 ### How to Use the Project
 
 Under the 'reports' folder, add the necessary pdf you want to merge.
