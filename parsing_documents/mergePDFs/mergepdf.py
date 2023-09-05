@@ -1,7 +1,7 @@
 """
     Author: Ojelle Rogero
     Created on: November 23, 2021
-    Modified on: July 22, 2023
+    Modified on: September 9, 2023
     About:
         Simple python script to merge pdf files into one pdf file
 """
