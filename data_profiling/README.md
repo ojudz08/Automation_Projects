@@ -1,3 +1,6 @@
+<p align="right"><a href="https://github.com/ojudz08/AutomationProjects/tree/main/data_profiling">Back To Main Page</a></p>
+
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -26,8 +29,6 @@ Output Result is save a xlsx file type.
 https://github.com/ojudz08/AutomationProjects/assets/26113813/add56f0b-02ca-46fb-b015-94b447584ead
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ### What are the pre-requisites?
 
 There's no necessary third party libraries used. You only need the pandas library for this project. Run the command below to install all python dependencies.
@@ -36,9 +37,6 @@ There's no necessary third party libraries used. You only need the pandas librar
 python -m pip install -r requirements.txt
 ```
 
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### How to Use the Project
 
@@ -59,5 +57,6 @@ if __name__ == "__main__":
     save_data = data.saveResultToExcel()   
 
 ```
-<p align="right">(<a href="#top">back to top</a>)</p>
 
+
+<p align="right"><a href="#top">Back To Top</a></p>
