@@ -1,7 +1,7 @@
 """
     Author: Ojelle Rogero
     Created on: November 14, 2021
-    Modified on: July 22, 2023
+    Modified on: September 14, 2023
     About:
         Converts the Weekly Market Recap section of GSAM Market Monitor
         Parse each asset type and save as a data table in separate sheet
