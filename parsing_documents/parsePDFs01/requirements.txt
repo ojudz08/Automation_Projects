@@ -1,4 +1,4 @@
 pip
 pandas
 pathlib
-pypdf
+tabula-py
