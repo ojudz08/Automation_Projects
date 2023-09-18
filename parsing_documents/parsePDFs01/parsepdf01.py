@@ -15,28 +15,28 @@ import tabula
 import pandas as pd
 
 
-class pdfConvert():
+class pdfParse():
 
-    def __init__(self, file, output):
-        self.file = file
-        self.output = output
+    def __init__(self, report_folder, output_folder, filename):
+        parent_dir = Path(__file__).parents[0]
+        sys.path.append(parent_dir)
+
+        self.filename = os.path.join(parent_dir, report_folder, filename)
+        self.output = os.path.join(parent_dir, output_folder)
 
 
     def readPdf(self, box, pg, strm):
         """
           Reads the table section with its designated bounding box. Parsed the table and returns a dataframe.
             :input
-              box
-                bounding box - list; boundary box or section of the table to parse
-              pg
-                pdf page - int; the page section of the pdf to parse
-              strm
-                stream mode - True or False; used to parse tables with whitespaces between cells to simulate table like structure
+              box  --> bounding box - list; boundary box or section of the table to parse
+              pg   --> pdf page - int; the page section of the pdf to parse
+              strm --> stream mode - True or False; used to parse tables with whitespaces between cells to simulate table like structure
             :output
-              df - parsed and converted content from pdf output as dataframe
+              df   --> parsed and converted content from pdf output as dataframe
         """
         box_fc = [box[i] * 28.28 for i in range(0, 4)]
-        df = tabula.read_pdf(self.file, pages=pg, area=[box_fc], output_format='dataframe', stream=strm)
+        df = tabula.read_pdf(self.filename, pages=pg, area=[box_fc], output_format='dataframe', stream=strm)
         return df
 
 
@@ -49,6 +49,15 @@ class pdfConvert():
               data - index Returns manipulated table output as dataframe
         """
         df = self.readPdf([2, 0, 20, 11], 3, True)[0]
+        
+        idxRetCol = df.iloc[:,0]
+
+        equities_idx = idxRetCol[idxRetCol == "EQUITIES"].index[0]  # GET BACK HERE
+        #for i in idxRetCol:
+        #    if idxRetCol[i] == "EQUITIES":
+        #        idx = idxRetCol[i].index
+
+        """
         marketType = df.columns.values[0]
         prd = df.iloc[0, :]
         period = [prd[i] for i in range(0, len(prd)) if pd.isnull(prd[i]) == False]
@@ -68,7 +77,8 @@ class pdfConvert():
             data = data.append(temp1, ignore_index=True)
 
         data.columns = ["Type", "Asset Type", "Indices", period[0], period[1], period[2], period[3]]
-        return data
+        """
+        return  #df.iloc[:,1:4]
 
 
     def commodities(self):
@@ -164,23 +174,15 @@ class pdfConvert():
 
 
 if __name__ == '__main__':
-    parent_dir = Path(__file__).parents[1]
-    sys.path.append(parent_dir)
     
-    file_path = str(parent_dir) + r"\parsePDFs01\reports"
-    input_file = r"GSAM_Market_Monitor_081222.pdf"
-    out_path = str(parent_dir) + r"\parsePDFs01\output"
-    output_file = r"GSAM_Weekly_Market_Recap.xlsx"
+    report_folder = "reports"
+    output_folder = "output"
+    filename = r"GSAM_Market_Monitor_081222.pdf"
 
-    convert = pdfConvert(os.path.join(file_path, input_file), os.path.join(out_path, output_file))
+    convert = pdfParse(report_folder, output_folder, filename)
+    test = convert.indexReturns()
+    print(test)
+
+    #convert = pdfConvert(os.path.join(file_path, input_file), os.path.join(out_path, output_file))
     #convert.weeklyMarketRecap()
     #print(f'Done converting pdf!')
-
-    #df = self.readPdf([2, 0, 20, 11], 3, True)[0]
-    #box_fc = [box[i] * 28.28 for i in range(0, 4)]
-    #df = tabula.read_pdf(self.file, pages=pg, area=[box_fc], output_format='dataframe', stream=strm)
-
-    box = [2, 0, 20, 11]
-    box_fc = [box[i] * 28.28 for i in range(0, 4)]
-    test = tabula.read_pdf(os.path.join(file_path, input_file), pages=3, area=[box_fc], output_format='dataframe', stream=True)
-    print(test)
