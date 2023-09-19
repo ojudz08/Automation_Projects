@@ -43,42 +43,30 @@ class pdfParse():
     def indexReturns(self):
         """
           Parse the Index Returns table (page 3 of the pdf)
-            :input
-              None. Input df is called from readPdf function
-            :output
-              data - index Returns manipulated table output as dataframe
+            :input   None, Input df is called from readPdf function
+            :output  data - index Returns manipulated table output as dataframe
         """
         df = self.readPdf([2, 0, 20, 11], 3, True)[0]
-        
         idxRetCol = df.iloc[:,0]
-
-        equities_idx = idxRetCol[idxRetCol == "EQUITIES"].index[0]  # GET BACK HERE
-        #for i in idxRetCol:
-        #    if idxRetCol[i] == "EQUITIES":
-        #        idx = idxRetCol[i].index
-
-        """
-        marketType = df.columns.values[0]
-        prd = df.iloc[0, :]
-        period = [prd[i] for i in range(0, len(prd)) if pd.isnull(prd[i]) == False]
-        idxType = df.iloc[:, 0]
-        indexType = [idxType[i] for i in range(0, len(idxType)) if pd.isnull(df.iloc[:, 1][i]) == True]
-        idx = df[df.iloc[:, 0].isin(indexType)].index
-
+        market_type = ["EQUITIES", "FIXED INCOME", "OTHER"]
+        idx = [idxRetCol[idxRetCol == market_type[0]].index[0], 
+               idxRetCol[idxRetCol == market_type[1]].index[0],
+               idxRetCol[idxRetCol == market_type[2]].index[0]]
+        
         data = pd.DataFrame()
-        for i in range(0, len(idx)):
-            if i < len(idx) - 1:
-                temp1 = df[idx[i] + 1 : idx[i+1]].reset_index(drop=True)
-            else:
-                temp1 = df[idx[i] + 1: len(df)].reset_index(drop=True)
-            temp1 = pd.concat([pd.DataFrame([marketType] * len(temp1)),
-                               pd.DataFrame([indexType[i]] * len(temp1)),
-                               temp1], axis=1, ignore_index=True)
-            data = data.append(temp1, ignore_index=True)
+        for i in range(0, 3):
+            if i == 2: idx_n = len(df)
+            else: idx_n = idx[i + 1] 
 
-        data.columns = ["Type", "Asset Type", "Indices", period[0], period[1], period[2], period[3]]
-        """
-        return  #df.iloc[:,1:4]
+            indexRet_df = df.iloc[idx[i] + 1: idx_n, :].reset_index(drop=True)
+            temp1_df = pd.DataFrame({0: ["Index Returns"] * len(indexRet_df), 
+                                     1: [market_type[i]] * len(indexRet_df)})
+            temp2_df = pd.concat([temp1_df, indexRet_df], axis=1, ignore_index=True)
+            data = pd.concat([data, temp2_df], ignore_index=True)       
+
+        data.columns = ["Type", "Asset Type", "Index", "1 week", "MTD", "QTD", "YTD"]
+        
+        return data
 
 
     def commodities(self):
