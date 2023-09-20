@@ -35,7 +35,11 @@ The output will be saved under the "output" folder
 
 ```Python
 if __name__ == '__main__':
-    <update this section here>
+    filename = # GSAM filename herre
+
+    convert = pdfParse()
+    data = convert.weeklyMarketRecap(filename)
+    print("Done converting data!")
 
 ```
 
