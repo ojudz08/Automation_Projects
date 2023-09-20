@@ -1,4 +1,5 @@
 pip
 pandas
+numpy
 pathlib
 tabula-py

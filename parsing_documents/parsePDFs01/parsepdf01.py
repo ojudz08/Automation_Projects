@@ -13,6 +13,7 @@ from pathlib import Path
 import os, sys
 import tabula
 import pandas as pd
+import numpy as np
 
 
 class pdfParse():
@@ -39,19 +40,29 @@ class pdfParse():
         df = tabula.read_pdf(self.filename, pages=pg, area=[box_fc], output_format='dataframe', stream=strm)
         return df
 
+    def getIndex(self):
+        df1 = self.readPdf([2, 0, 27, 11], 3, True)[0]
+        df2 = self.readPdf([2, 11, 13, 22], 3, True)[0]
+        assetCol1, assetCol2 = df1.iloc[:,0], df2.iloc[:,0]
+        asset = ["EQUITIES", "FIXED INCOME", "OTHER", "COMMODITIES", "CURRENCIES", "RATES", "SPREADS"]
+        idx = [assetCol1[assetCol1 == asset[0]].index[0], 
+               assetCol1[assetCol1 == asset[1]].index[0],
+               assetCol1[assetCol1 == asset[2]].index[0],
+               assetCol1[assetCol1 == asset[3]].index[0],
+               assetCol1[assetCol1 == asset[4]].index[0],
+               assetCol2[assetCol2 == asset[5]].index[0],
+               assetCol2[assetCol2 == asset[6]].index[0],]
+        return idx
 
     def indexReturns(self):
         """
           Parse the Index Returns table (page 3 of the pdf)
             :input   None, Input df is called from readPdf function
-            :output  data - index Returns manipulated table output as dataframe
+            :output  data - Index Returns manipulated table output as dataframe
         """
         df = self.readPdf([2, 0, 20, 11], 3, True)[0]
-        idxRetCol = df.iloc[:,0]
-        market_type = ["EQUITIES", "FIXED INCOME", "OTHER"]
-        idx = [idxRetCol[idxRetCol == market_type[0]].index[0], 
-               idxRetCol[idxRetCol == market_type[1]].index[0],
-               idxRetCol[idxRetCol == market_type[2]].index[0]]
+        idx = self.getIndex()
+        asset = ["EQUITIES", "FIXED INCOME", "OTHER"]
         
         data = pd.DataFrame()
         for i in range(0, 3):
@@ -60,7 +71,7 @@ class pdfParse():
 
             indexRet_df = df.iloc[idx[i] + 1: idx_n, :].reset_index(drop=True)
             temp1_df = pd.DataFrame({0: ["Index Returns"] * len(indexRet_df), 
-                                     1: [market_type[i]] * len(indexRet_df)})
+                                     1: [asset[i]] * len(indexRet_df)})
             temp2_df = pd.concat([temp1_df, indexRet_df], axis=1, ignore_index=True)
             data = pd.concat([data, temp2_df], ignore_index=True)       
 
@@ -72,20 +83,16 @@ class pdfParse():
     def commodities(self):
         """
           Parse the Commodities table (page 3 of the pdf)
-            :input
-              None. Input df is called from readPdf function
-            :output
-              data - commodities manipulated table output as dataframe
+            :input   None, Input df is called from readPdf function
+            :output  data - Commodities Returns manipulated table output as dataframe
         """
         df = self.readPdf([20, 0, 23, 11], 3, True)[0]
-        marketType = df.columns.values[0]
-        prd = df.iloc[0, :]
-        period = [prd[i] for i in range(0, len(prd)) if pd.isnull(prd[i]) == False]
+        commodities_df = df.iloc[1: len(df)].reset_index(drop=True)
+        temp1_df = pd.DataFrame({0: ["COMMODITIES"] * len(commodities_df)})
+        data = pd.concat([temp1_df, commodities_df], axis=1, ignore_index=True)
+        
+        data.columns = ["Asset", "Commodities"] + df.iloc[0, 1:5].values.tolist()
 
-        data =  df[1 : len(df)].reset_index(drop=True)
-        data = pd.concat([pd.DataFrame([marketType] * len(data)), data], axis=1, ignore_index=True)
-
-        data.columns = ["Asset Type", "Commodities", period[0], period[1], period[2], period[3]]
         return data
 
 
@@ -168,9 +175,5 @@ if __name__ == '__main__':
     filename = r"GSAM_Market_Monitor_081222.pdf"
 
     convert = pdfParse(report_folder, output_folder, filename)
-    test = convert.indexReturns()
+    test = convert.commodities()
     print(test)
-
-    #convert = pdfConvert(os.path.join(file_path, input_file), os.path.join(out_path, output_file))
-    #convert.weeklyMarketRecap()
-    #print(f'Done converting pdf!')
