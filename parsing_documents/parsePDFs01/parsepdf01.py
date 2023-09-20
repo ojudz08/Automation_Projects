@@ -13,7 +13,6 @@ from pathlib import Path
 import os, sys
 import tabula
 import pandas as pd
-import numpy as np
 
 
 class pdfParse():
