@@ -42,16 +42,11 @@ class pdfParse():
 
     def getIndex(self):
         df1 = self.readPdf([2, 0, 27, 11], 3, True)[0]
-        df2 = self.readPdf([2, 11, 13, 22], 3, True)[0]
-        assetCol1, assetCol2 = df1.iloc[:,0], df2.iloc[:,0]
-        asset = ["EQUITIES", "FIXED INCOME", "OTHER", "COMMODITIES", "CURRENCIES", "RATES", "SPREADS"]
+        assetCol1 = df1.iloc[:,0]
+        asset = ["EQUITIES", "FIXED INCOME", "OTHER"]
         idx = [assetCol1[assetCol1 == asset[0]].index[0], 
                assetCol1[assetCol1 == asset[1]].index[0],
-               assetCol1[assetCol1 == asset[2]].index[0],
-               assetCol1[assetCol1 == asset[3]].index[0],
-               assetCol1[assetCol1 == asset[4]].index[0],
-               assetCol2[assetCol2 == asset[5]].index[0],
-               assetCol2[assetCol2 == asset[6]].index[0],]
+               assetCol1[assetCol1 == asset[2]].index[0]]
         return idx
 
     def indexReturns(self):
@@ -90,7 +85,7 @@ class pdfParse():
         commodities_df = df.iloc[1: len(df)].reset_index(drop=True)
         temp1_df = pd.DataFrame({0: ["COMMODITIES"] * len(commodities_df)})
         data = pd.concat([temp1_df, commodities_df], axis=1, ignore_index=True)
-        
+
         data.columns = ["Asset", "Commodities"] + df.iloc[0, 1:5].values.tolist()
 
         return data
@@ -99,20 +94,16 @@ class pdfParse():
     def currencies(self):
         """
           Parse the Currencies table (page 3 of the pdf)
-            :input
-              None. Input df is called from readPdf function
-            :output
-              data - currencies manipulated table output as dataframe
+            :input   None, Input df is called from readPdf function
+            :output  data - Currencies Returns manipulated table output as dataframe
         """
         df = self.readPdf([23, 0, 27, 11], 3, True)[0]
-        marketType = df.columns.values[0]
-        prd = df.iloc[0, :]
-        period = [prd[i] for i in range(0, len(prd)) if pd.isnull(prd[i]) == False]
+        fx_df = df.iloc[1: len(df)].reset_index(drop=True)
+        temp1_df = pd.DataFrame({0: ["CURRENCIES"] * len(fx_df)})
+        data = pd.concat([temp1_df, fx_df], axis=1, ignore_index=True)
 
-        data = df[1: len(df)].reset_index(drop=True)
-        data = pd.concat([pd.DataFrame([marketType] * len(data)), data], axis=1, ignore_index=True)
+        data.columns = ["Asset", "FX Pair"] + df.iloc[0, 1:5].values.tolist()
 
-        data.columns = ["Asset Type", "Currency Pair", period[0], period[1], period[2], period[3]]
         return data
 
 
@@ -175,5 +166,5 @@ if __name__ == '__main__':
     filename = r"GSAM_Market_Monitor_081222.pdf"
 
     convert = pdfParse(report_folder, output_folder, filename)
-    test = convert.commodities()
-    print(test)
+    data = convert.currencies()
+    print(data)
