@@ -16,8 +16,4 @@ config.*
 /api/stock_price.py
 
 # ignore changes in subfolders - parsing_documents
-/parsing_documents/parsePDFs01/output
-/parsing_documents/parsePDFs01/reports
-
-/parsing_documents/parsePDFs02
-/parsing_documents/parsePDFs03
+/parsing_documents/images/parsepdf01.mp4
