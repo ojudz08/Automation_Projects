@@ -3,7 +3,7 @@
     Created on: September 21, 2023
     Modified on: 
     About:
-        <ADD ABOUT HERE>
+        This is an ongoing project....
     Modification / Updates:
         <>
 """
@@ -11,6 +11,7 @@
 from pathlib import Path
 import os, sys
 import tabula
+from PyPDF2 import PdfReader
 import pandas as pd
 
 
@@ -25,7 +26,8 @@ class pdfParse():
 
 
     def readPdf(self, box, pg, strm):
-        box_fc = [box[i] * 28.28 for i in range(0, 4)]
+        #[box[i] * 28.28 for i in range(0, 4)]
+        box_fc = [box[i] * 25 for i in range(0, 4)]
         df = tabula.read_pdf(self.filename, pages=pg, area=[box_fc], output_format='dataframe', stream=strm)
         return df
     
@@ -46,9 +48,23 @@ class pdfParse():
     def commonStocks(self):
         # [2, 0, 27, 4.4]  
         idx = self.getIndex()
-        temp = self.readPdf([2, 0, 27, 15], 4, True)[0]
+        temp = self.readPdf([2, 0, 27, 22], 4, True)[0]
         return temp.iloc[5:,:].reset_index(drop=True)
     
+    def test(self):
+        reader = PdfReader(self.filename)
+        num_pgs = len(reader.pages)
+        page = reader.pages[3]
+        text = page.extract_text()
+        return text
+    
+
+    def savetoExel(self):
+        data = pd.DataFrame([self.test()])
+
+        output_file = os.path.join(self.output, 'test.xlsx')
+        with pd.ExcelWriter(output_file) as writer:
+            data.to_excel(writer, sheet_name="test", index=False)
 
 
 
@@ -56,5 +72,6 @@ if __name__ == '__main__':
     filename = r"pdftest.pdf"
 
     convert = pdfParse(filename)
-    data = convert.commonStocks()
+    data = convert.savetoExel()
+    #print("pdf converted")
     print(data)
