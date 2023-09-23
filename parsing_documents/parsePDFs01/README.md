@@ -26,6 +26,9 @@ python -m pip install -r requirements.txt
 ```
 
 
+https://github.com/ojudz08/AutomationProjects/assets/26113813/51339386-1803-4b82-9d7d-e3f57d0ec535
+
+
 
 ### How to Use the Project
 
