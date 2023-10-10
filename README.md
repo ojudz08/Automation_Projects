@@ -8,7 +8,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    To EDIT
+    This is an ongoing project revision
   </ol>
 </details>
 
