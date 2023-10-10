@@ -8,7 +8,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    This is an ongoing project revision
+    To EDIT
   </ol>
 </details>
 
@@ -17,7 +17,17 @@
 <!-- PROJECT LISTS -->
 ### Project Lists
 
-TO EDIT
+This is an ongoing project revision.
+
+Revised and completed Projects
+ - Parsing Documents
+ - Data Profiler
+
+Ongoing Revision and updating documentation/readme
+ - Web Scraping
+ - Finance
+ - APIs
+
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
