@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<h1 align="center">Projects</h1>
+<h1 align="center">Projects (Updating this as of May 2024)</h1>
 </div>
 
 <!-- Table of Contents -->
