@@ -19,11 +19,15 @@ Raw Data Source is a pdf file type and Output Result is save as a pdf file type 
 
 ### What are the pre-requisites?
 
-Run the command below to install all python dependencies.
+Run the command below in following order.
 
 ```Python
 python -m pip install -r requirements.txt
+pyinstaller main.py --onefile --name pdf_merger
+python move_exe.py
 ```
+
+Or you may simply run the run.bat
 
 
 https://github.com/ojudz08/AutomationProjects/assets/26113813/6a024d59-ba34-46e5-9c6f-4d43b2d7a704
@@ -32,31 +36,23 @@ https://github.com/ojudz08/AutomationProjects/assets/26113813/6a024d59-ba34-46e5
 ### Running the Script
 1. Save your reports within __*reports*__ folder.
 
-2. When you Rename the following, as you see fit.
-- merged_filename
-- merged_1stpages
+2. This will install allthe necessary python libraries used.
+   ```Python
+   python -m pip install -r requirements.txt
+   ```
 
-NOTE: If you want to the merged files for the pdf file, you may comment the 2nd merged filename.
+3. Create an executable file pdf_merger.exe from the main.py
+   ```Python
+   pyinstaller main.py --onefile --name pdf_merger
+   ```
 
-```Python
-if __name__ == '__main__':
-    parent_dir = Path(__file__).parents[1]
-    sys.path.append(parent_dir)
-
-    pdf_folder =  str(parent_dir) + r"\mergePDFs\reports"
-    output_folder =  str(parent_dir) + r"\mergePDFs\output"
-    merged_filename = # filename of the merged pdf pages
-    merged_1stpages = # filename of the merged 1st pdf pages
-
-    pdfAll = PDF_Merge(pdf_folder, output_folder, merged_filename)
-    pdfAll.mergeAll()
-    print("Done merging all pdfs!")
-
-    pdfpages = PDF_Merge(pdf_folder, output_folder, merged_1stpages)
-    pdfpages.mergePages(pagesToMerge=1)
-    print("Done merging 1st pages of the pdfs!")
-
-```
+4. Move the created executable file in the current directory.
+   ```Python
+   python move_exe.py
+   ```
 
 
-<p align="right"><a href="#top">Back To Top</a></p>
+<!-- CONTACT -->
+### Disclaimer
+
+This project was created using Windows, the run.bat will only work with Windows. Please contact Ojelle Rogero - ojelle.rogero@gmail.com for any questions with email subject "Github Parsing PDFs".
