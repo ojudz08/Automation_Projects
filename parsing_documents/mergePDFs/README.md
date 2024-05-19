@@ -9,7 +9,7 @@
 
 
 <!-- ABOUT PROJECT -->
-### About Project
+### About
 
 This is a project where it:
 1. Merge all the pdf pages
@@ -29,11 +29,10 @@ python -m pip install -r requirements.txt
 https://github.com/ojudz08/AutomationProjects/assets/26113813/6a024d59-ba34-46e5-9c6f-4d43b2d7a704
 
 
-### How to Use the Project
+### Running the Script
+1. Save your reports within __*reports*__ folder.
 
-Under the 'reports' folder, add the necessary pdf you want to merge.
-
-Rename the following, as you see fit.
+2. When you Rename the following, as you see fit.
 - merged_filename
 - merged_1stpages
 
