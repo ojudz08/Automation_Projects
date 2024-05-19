@@ -29,8 +29,7 @@ python move_exe.py
 
 Or you may simply run the run.bat
 
-
-https://github.com/ojudz08/AutomationProjects/assets/26113813/6a024d59-ba34-46e5-9c6f-4d43b2d7a704
+https://github.com/ojudz08/Automation/assets/26113813/82d5f2c1-8aac-4d8a-ae56-a5a5ec750c54
 
 
 ### Running the Script
