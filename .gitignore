@@ -1,11 +1,10 @@
 # ignore files
+.gitignore
 __init__.py
 config.*
 
 # ignore folders
-.venv
-.idea
-/_archive
+
 /finance(draft)
 /web_scraping
 
