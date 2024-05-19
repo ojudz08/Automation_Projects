@@ -3,7 +3,7 @@
     Created on: November 23, 2021
     Modified on: May 20, 2024
     About:
-        Simple python script to merge pdf files into one pdf file
+        Python script that opens pdf files and merge it
 """
 
 from pathlib import Path
@@ -16,6 +16,7 @@ from tkinter import messagebox, simpledialog
 class PDF_Merge():
     
     def create_path(self, pdf_folder):
+        """Creates the directory of the target folder if not exist"""
         output_folder = os.path.join(Path(pdf_folder).parent.absolute(), "output")
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
@@ -23,6 +24,7 @@ class PDF_Merge():
 
 
     def save_as(self, output_folder):
+        """Save the pdf result to desired target folder"""
         file_types = [('PDF Files', '*.pdf'), ('All Files', '*.*')]
         init_dir = output_folder
         save_file_as = asksaveasfilename(initialdir=init_dir, filetypes=file_types, defaultextension='.pdf', confirmoverwrite=True)
@@ -33,8 +35,7 @@ class PDF_Merge():
 
 
     def mergeAll(self):
-        """Combines all pdf and save"""
-
+        """Combines all pages in the pdf and save"""
         pdf_folder = Path(open_files[0]).parent.absolute()
         output_folder = self.create_path(pdf_folder)
         merger = PdfWriter()
@@ -49,13 +50,12 @@ class PDF_Merge():
 
 
     def mergePages(self, pdf_page):
-        """Combines specific pdf pages and save"""
+        """Combines specific pdf page and save"""
         pdf_folder = Path(open_files[0]).parent.absolute()
         output_folder = self.create_path(pdf_folder)
 
         merger = PdfWriter()
         pagesToMerge = pdf_page - 1
-
 
         for pdf in os.listdir(pdf_folder):
             pdf_input = os.path.join(pdf_folder, pdf)
@@ -65,7 +65,6 @@ class PDF_Merge():
         merger.write(self.save_as(output_folder))
         merger.close()
         messagebox.showinfo('Done!', 'Please check output folder.')
-
 
 
 
