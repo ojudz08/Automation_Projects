@@ -23,6 +23,11 @@
    <td><a class="externalLink" href="https://github.com/ojudz08/Automation/tree/main/parsing_documents/mergePDFs">link</a></td>
 </tr>
 <tr>
+   <td>-</td>
+   <td>Merge specific pages of the selected pdf file</td>
+   <td>-</td>
+</tr>
+<tr>
    <td>Parse PDF 1</td>
    <td>Parses multiple assets from GSAM Weekly Monitoring</td>
    <td><a class="externalLink" href="https://github.com/ojudz08/Automation/tree/main/parsing_documents/parsePDFs01">link</a></td>
