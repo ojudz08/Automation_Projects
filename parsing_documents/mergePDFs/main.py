@@ -6,18 +6,17 @@
         Python script that opens pdf files and merge it
 """
 
-from pathlib import Path
 from pypdf import PdfWriter
-import os
+import os, sys
 import tkinter as tk
 from tkinter.filedialog import *
 from tkinter import messagebox, simpledialog
 
 class PDF_Merge():
     
-    def create_path(self, pdf_folder):
+    def create_if_not_exist(self):
         """Creates the directory of the target folder if not exist"""
-        output_folder = os.path.join(Path(pdf_folder).parent.absolute(), "output")
+        output_folder = os.path.join(init_dir, "output")
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
         return output_folder
@@ -36,8 +35,8 @@ class PDF_Merge():
 
     def mergeAll(self):
         """Combines all pages in the pdf and save"""
-        pdf_folder = Path(open_files[0]).parent.absolute()
-        output_folder = self.create_path(pdf_folder)
+        pdf_folder = os.path.join(init_dir, "reports")
+        output_folder = self.create_if_not_exist()
         merger = PdfWriter()
 
         for pdf in os.listdir(pdf_folder):
@@ -51,8 +50,8 @@ class PDF_Merge():
 
     def mergePages(self, pdf_page):
         """Combines specific pdf page and save"""
-        pdf_folder = Path(open_files[0]).parent.absolute()
-        output_folder = self.create_path(pdf_folder)
+        pdf_folder = os.path.join(init_dir, "reports")
+        output_folder = self.create_if_not_exist()
 
         merger = PdfWriter()
         pagesToMerge = pdf_page - 1
@@ -69,8 +68,9 @@ class PDF_Merge():
 
 
 if __name__ == '__main__':
-    open_files = askopenfilenames(initialdir=Path(__file__).parents[0])
-    
+    init_dir = os.path.abspath(os.path.dirname(sys.argv[0]))
+    open_files = askopenfilenames(initialdir=init_dir)
+
     if len(open_files) > 1:
         msg = messagebox.askyesnocancel('Yes|No|Cancel', 'Do you want to merge all Pages?')
         if msg == True:

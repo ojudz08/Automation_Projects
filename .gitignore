@@ -4,7 +4,6 @@ __init__.py
 config.*
 
 # ignore folders
-
 /finance(draft)
 /web_scraping
 
@@ -15,4 +14,8 @@ config.*
 /api/stock_price.py
 
 # ignore changes in subfolders - parsing_documents
+/parsing_documents/mergePDFs/build
+/parsing_documents/mergePDFs/dist
+/parsing_documents/mergePDFs/*.spec
+/parsing_documents/mergePDFs/*.exe
 /parsing_documents/images/parsepdf01.mp4

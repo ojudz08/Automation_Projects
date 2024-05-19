@@ -1,4 +1,5 @@
 pip
 pandas
-pathlib
 pypdf
+tk
+pyinstaller
