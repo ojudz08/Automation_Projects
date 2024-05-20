@@ -72,7 +72,7 @@ if __name__ == '__main__':
     open_files = askopenfilenames(initialdir=init_dir)
 
     if len(open_files) > 1:
-        msg = messagebox.askyesnocancel('Yes|No|Cancel', 'Do you want to merge all Pages?')
+        msg = messagebox.askyesnocancel('Select', 'Do you want to merge all Pages?\nYes - Merge all pages\nNo - Merge specific page\nCancel')
         if msg == True:
             PDF_Merge().mergeAll()
         elif msg == False:

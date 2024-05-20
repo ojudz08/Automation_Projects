@@ -19,7 +19,7 @@ Raw Data Source is a pdf file type and Output Result is save as a pdf file type 
 
 ### What are the pre-requisites?
 
-Run the command below in following order.
+Run the command below in following order. Or you may simply run the run.bat which also contains the commands below.
 
 ```Python
 python -m pip install -r requirements.txt
@@ -27,13 +27,11 @@ pyinstaller main.py --onefile --name pdf_merger
 python move_exe.py
 ```
 
-Or you may simply run the run.bat
-
 
 ### Running the Script
 1. Save your reports within __*reports*__ folder.
 
-2. This will install allthe necessary python libraries used.
+2. This will install all the necessary python libraries used.
    ```Python
    python -m pip install -r requirements.txt
    ```
@@ -47,6 +45,28 @@ Or you may simply run the run.bat
    ```Python
    python move_exe.py
    ```
+
+
+### How to use pdf_merger
+1. After running the script above, you will see a **_pdf_merger_** application.
+
+2. Once you run the application, it will prompt you to select the pdf files you want to merge.
+
+   ![alt text](img/image.png)
+
+3. After selecting the files to merge, select the options Yes, No or Cancel.
+
+   ![alt text](img/image-1.png)
+
+   - Select Yes if you want to merge all the pages on all the files selected. 
+   - Select No if you want to merge specific pages only
+
+     ![alt text](img/image-2.png)
+
+   - Cancel if you want to cancel merging any pages.
+
+4. Save the file.
+
 
 
 <!-- CONTACT -->
