@@ -15,6 +15,7 @@ config.*
 
 # ignore changes in subfolders - parsing_documents
 /parsing_documents/mergePDFs/build
+/parsing_documents/mergePDFs/build/pdf_merger
 /parsing_documents/mergePDFs/dist
 /parsing_documents/mergePDFs/*.spec
 /parsing_documents/mergePDFs/*.exe

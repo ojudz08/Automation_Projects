@@ -78,7 +78,7 @@ if __name__ == '__main__':
         elif msg == False:
             root = tk.Tk()
             root.withdraw()
-            pdf_page = simpledialog.askinteger("Input", "Page you want to merge:")
+            pdf_page = simpledialog.askinteger("Input", "Input page you want to merge:")
 
             PDF_Merge().mergePages(pdf_page)
         else:
