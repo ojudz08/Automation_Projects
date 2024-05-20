@@ -18,8 +18,14 @@
 </tr>
 <tr>
    <td>Merge PDF</td>
-   <td>Merge one or multiple pdf</td>
+   <td>Merge all pages of the selected pdf file
+       Merge specific pages of the selected pdf file</td>
    <td><a class="externalLink" href="https://github.com/ojudz08/Automation/tree/main/parsing_documents/mergePDFs">link</a></td>
+</tr>
+<tr>
+   <td>-</td>
+   <td>Merge specific pages of the selected pdf file</td>
+   <td>-</td>
 </tr>
 <tr>
    <td>Parse PDF 1</td>
