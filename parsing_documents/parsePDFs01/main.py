@@ -1,7 +1,7 @@
 """
     Author: Ojelle Rogero
     Created on: November 14, 2021
-    Modified on: September 20, 2023
+    Updated on: May 21, 2024
     About:
         Converts the Weekly Market Recap section of GSAM Market Monitor
         Parse each asset type and save as a data table in separate sheet
@@ -13,6 +13,9 @@ from pathlib import Path
 import os, sys
 import tabula
 import pandas as pd
+import tkinter as tk
+from tkinter.filedialog import *
+from tkinter import messagebox, simpledialog
 
 
 class pdfParse():
@@ -158,8 +161,11 @@ class pdfParse():
         
 
 if __name__ == '__main__':
-    filename = r"GSAM_Market_Monitor_081222.pdf"
-
+    init_dir = os.path.abspath(os.path.dirname(sys.argv[0]))
+    open_file = askopenfilenames(initialdir=init_dir)
+    
+    filename = os.path.basename(open_file[0])
+    
     convert = pdfParse()
-    data = convert.weeklyMarketRecap(filename)
-    print("Done converting data!")
+    #data = convert.weeklyMarketRecap(filename)
+    #print("Done converting data!")
