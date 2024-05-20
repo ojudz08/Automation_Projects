@@ -29,8 +29,6 @@ python move_exe.py
 
 Or you may simply run the run.bat
 
-https://github.com/ojudz08/Automation/assets/26113813/82d5f2c1-8aac-4d8a-ae56-a5a5ec750c54
-
 
 ### Running the Script
 1. Save your reports within __*reports*__ folder.
