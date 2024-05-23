@@ -18,4 +18,10 @@ config.*
 /parsing_documents/mergePDFs/dist
 /parsing_documents/mergePDFs/*.exe
 
+# ignore changes in subfolders - parsing_documents/mergePDFs
+/parsing_documents/parsePDFs01/build
+/parsing_documents/parsePDFs01/dist
+/parsing_documents/parsePDFs01/*.exe
+
+
 /parsing_documents/images/parsepdf01.mp4
