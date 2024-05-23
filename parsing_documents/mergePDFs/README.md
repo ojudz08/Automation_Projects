@@ -23,8 +23,8 @@ Run the command below in following order. Or you may simply run the run.bat whic
 
 ```Python
 python -m pip install -r requirements.txt
-pyinstaller main.py --onefile --name pdf_merger
-python move_exe.py
+pyinstaller main.py --clean --onefile --name pdf_merger
+python scripts/file_transfer.py
 ```
 
 
@@ -38,12 +38,12 @@ python move_exe.py
 
 3. Create an executable file pdf_merger.exe from the main.py
    ```Python
-   pyinstaller main.py --onefile --name pdf_merger
+   pyinstaller main.py --clean --onefile --name pdf_merger
    ```
 
 4. Move the created executable file in the current directory.
    ```Python
-   python move_exe.py
+   python scripts/file_transfer.py
    ```
 
 

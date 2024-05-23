@@ -13,6 +13,6 @@ if os.path.exists(install_dir):
 
 
 # transfer spec to dist
-spec_src = os.path.join(parent_dir, "pdf_merger.spec")
-spec_dst = os.path.join(install_dir, "pdf_merger.spec")
+spec_src = os.path.join(parent_dir, "pdf_parser.spec")
+spec_dst = os.path.join(install_dir, "pdf_parser.spec")
 os.replace(spec_src, spec_dst)

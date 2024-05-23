@@ -1,6 +1,5 @@
 pip
 pandas
-numpy
 tabula-py
-JPype1
 openpyxl
+Jpype1

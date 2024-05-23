@@ -15,7 +15,6 @@ import pandas as pd
 import tkinter as tk
 from tkinter.filedialog import *
 from tkinter import messagebox
-import time
 
 
 root = logging.getLogger()
@@ -160,7 +159,8 @@ class pdfParse():
         filepath = os.path.abspath(self.open_file()[0])
         filename = os.path.basename(filepath)
 
-        #print(f"Parsing {filename}...")
+        print(f"Parsing {filename}...")
+        print("This will take at least 1-2 mins..")
         idxRet = self.indexReturns(filepath)
         comm = self.commodities(filepath)
         curr = self.currencies(filepath)
