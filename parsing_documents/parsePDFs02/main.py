@@ -1,11 +1,8 @@
 # Reference
-# https://enjoymachinelearning.com/blog/extract-data-from-pdf-python/
+# https://towardsdev.com/6-python-packages-for-working-with-pdf-files-fab9065ae24d
 
 # Libraries to check
 # PyPDF2
-# pdfplumber
-# Camelot
-# pdfminer.six
 
 import os
 import tabula
