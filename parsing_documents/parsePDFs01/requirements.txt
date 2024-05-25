@@ -1,5 +1,0 @@
-pip
-pandas
-tabula-py
-openpyxl
-Jpype1

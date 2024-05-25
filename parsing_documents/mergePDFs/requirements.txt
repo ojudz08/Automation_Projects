@@ -1,5 +1,0 @@
-pip
-pandas
-pypdf
-tk
-pyinstaller
