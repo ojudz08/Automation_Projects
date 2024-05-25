@@ -3,15 +3,7 @@
 __init__.py
 config.*
 
-# ignore folders
-/finance(draft)
-/web_scraping
-
 # ignore changes in subfolders - api
-/api/project1
-/api/spotify_api
-/api/README.md
-/api/stock_price.py
 
 # ignore changes in subfolders - parsing_documents/mergePDFs
 /parsing_documents/mergePDFs/build
@@ -23,5 +15,8 @@ config.*
 /parsing_documents/parsePDFs01/dist
 /parsing_documents/parsePDFs01/*.exe
 
-
 /parsing_documents/images/parsepdf01.mp4
+
+
+# ignore changes in subfolders - webscraping/jobwebscrape
+/.venv
