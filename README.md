@@ -24,7 +24,11 @@ Summary of all automation projects using Python.
    <td>Scraping or crawling different websites using beautifulsoup, scrapy or selenium</td>
 </tr>
 <tr>
-   <td><a class="externalLink" href="https://github.com/ojudz08/webscraping-projects">APIs</a></td>
+   <td><a class="externalLink" href="">APIs</a></td>
    <td>Requesting data from different apis [to be updated]</td>
+</tr>
+<tr>
+   <td><a class="externalLink" href="">Chatbots</a></td>
+   <td>[Next project]</td>
 </tr>
 </table>
