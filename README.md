@@ -17,7 +17,7 @@ Summary of all automation projects using Python.
 </tr>
 <tr>
    <td><a class="externalLink" href="https://github.com/ojudz08/parse_pdf-projects">Parsing PDFs</a></td>
-   <td>Parsing pdf tables or text with pypdf or tabula</td>
+   <td>Transforming / processing pdf tables or text with pypdf, tabula and pymupdf</td>
 </tr>
 <tr>
    <td><a class="externalLink" href="https://github.com/ojudz08/webscraping-projects">Webscraping</a></td>
