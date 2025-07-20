@@ -21,14 +21,10 @@ Summary of all automation projects using Python.
 </tr>
 <tr>
    <td><a class="externalLink" href="https://github.com/ojudz08/webscraping-projects">Webscraping</a></td>
-   <td>Scraping or crawling different websites using beautifulsoup, scrapy or selenium [In Progress]</td>
+   <td>Scraping or crawling different websites using beautifulsoup, scrapy or selenium</td>
 </tr>
 <tr>
    <td><a class="externalLink" href="https://github.com/ojudz08/api-projects">APIs</a></td>
-   <td>Requesting data from stock market apis [In Progress]</td>
-</tr>
-<tr>
-   <td><a class="externalLink" href="">Chatbots</a></td>
-   <td>[Next project]</td>
+   <td>Requesting data from stock market apis</td>
 </tr>
 </table>
