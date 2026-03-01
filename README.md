@@ -8,7 +8,10 @@
 
 Summary of all automation projects using Python.
 
-<h2>Project Lists</h2>
+<br>
+
+<h2>Parsing PDFs Projects</h2>
+<p>Transforming, merging and processing pdf tables or text with pypdf, tabula and pymupdf</p>
 
 <table>
 <tr>
@@ -16,15 +19,46 @@ Summary of all automation projects using Python.
    <th>Definition</th>
 </tr>
 <tr>
-   <td><a class="externalLink" href="https://github.com/ojudz08/parse_pdf-projects">Parsing PDFs</a></td>
-   <td>Transforming / processing pdf tables or text with pypdf, tabula and pymupdf</td>
+   <td><a class="externalLink" href="https://github.com/ojudz08/parse-pdf-projects/tree/main/mergePDFs">Merge PDF</a></td>
+   <td>Merge all or specific pages of the selected pdf file</td>
 </tr>
 <tr>
-   <td><a class="externalLink" href="https://github.com/ojudz08/webscraping-projects">Webscraping</a></td>
-   <td>Scraping or crawling different websites using beautifulsoup, scrapy or selenium</td>
+   <td><a class="externalLink" href="https://github.com/ojudz08/parse-pdf-projects/tree/main/parsePDFs01">Parse PDF 1</a></td>
+   <td>Parses multiple assets from GSAM Weekly Monitoring</td>
 </tr>
 <tr>
-   <td><a class="externalLink" href="https://github.com/ojudz08/api-projects">APIs</a></td>
-   <td>Requesting data from stock market apis</td>
+   <td><a class="externalLink" href="https://github.com/ojudz08/parse-pdf-projects/tree/main/parsePDFs02">Parse PDF 2</a></td>
+   <td>Parse Natixis Sustainable Future Fund</td>
 </tr>
+<tr>
+   <td><a class="externalLink" href="https://github.com/ojudz08/parse-pdf-projects/tree/main/splitPDFs">Split PDF</a></td>
+   <td>Split pdf into the specified pages</td>
+</tr>
+</table>
+
+
+<br>
+
+
+<h2>Webscraping Projects</h2>
+<p>Scraping or crawling different websites using beautifulsoup, scrapy or selenium</p>
+
+<table>
+<tr>
+   <th>Repositories</th>
+   <th>Definition</th>
+</tr>
+<tr>
+   <td><a class="externalLink" href="<add here>">eFinancialCareers</a></td>
+   <td>Scrape the following job details posted in efinancialcareers for the last 24 hours:
+   
+    - Job Title
+    - Company Name
+    - Location
+    - Position Type
+    - Work Arrangement
+    - Salary
+    - Posted Date</td>
+</tr>
+
 </table>
