@@ -10,7 +10,7 @@ Summary of all automation projects using Python.
 
 <br>
 
-<h2>Parsing PDFs Projects</h2>
+<h2>Parsing PDFs</h2>
 <p>Transforming, merging and processing pdf tables or text with pypdf, tabula and pymupdf</p>
 
 <table>
@@ -40,8 +40,8 @@ Summary of all automation projects using Python.
 <br>
 
 
-<h2>Webscraping Projects</h2>
-<p>Scraping or crawling different websites using beautifulsoup, scrapy or selenium</p>
+<h2>API Integrations</h2>
+<p>API integration projects with REST API</p>
 
 <table>
 <tr>
@@ -49,7 +49,25 @@ Summary of all automation projects using Python.
    <th>Definition</th>
 </tr>
 <tr>
-   <td><a class="externalLink" href="<add here>">eFinancialCareers</a></td>
+   <td><a class="externalLink" href="https://github.com/ojudz08/api-integration-projects/tree/main/news_aggregator">News Fetcher</a></td>
+   <td>Fetch news from NewsAPI (https://newsapi.org/) which is a simple HTTP REST API for searching and fetching articles from the web
+</tr>
+</table>
+
+
+<br>
+
+
+<h2>Webscraping</h2>
+<p>Scraping or crawling different websites using beautifulsoup, scrapy,  selenium or playwright</p>
+
+<table>
+<tr>
+   <th>Repositories</th>
+   <th>Definition</th>
+</tr>
+<tr>
+   <td><a class="externalLink" href="<add here>">eFinancialCareers (on going) </a></td>
    <td>Scrape the following job details posted in efinancialcareers for the last 24 hours:
    
     - Job Title
@@ -60,5 +78,4 @@ Summary of all automation projects using Python.
     - Salary
     - Posted Date</td>
 </tr>
-
 </table>
